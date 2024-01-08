@@ -9,6 +9,8 @@
 
 # check <https://colab.research.google.com/drive/15JwcqxZ6p-wFfilQnzC83O6c3O66TusB?usp=sharing#scrollTo=jCLmMQYWERy8> for visualization of that
 
+import time # for performance
+
 def factorial(n):
     
     if n == 0:
@@ -21,10 +23,24 @@ def sum_fac_dig(n):
     sum_digs = 0
 
     while n >= 1:
+        sum_digs += facts[n%10]
+        n //= 10
+
+    return sum_digs
+
+def sum_fac_dig_slow(n):
+
+    sum_digs = 0
+
+    while n >= 1:
         sum_digs += factorial(n%10)
         n //= 10
 
     return sum_digs
+
+start = time.time()
+
+facts = list(map(factorial, list(range(10))))   # we only use these 10 factorials, so they can be pre calculated
 
 limit = 10000000
 sum_ = 0
@@ -34,4 +50,26 @@ for i in range(3, limit):
         print(i)
         sum_ += i
 
+end = time.time()
+
 print('---\n', sum_)
+print(f'time: f{end-start}')
+
+###################################
+#   SLOWER METHOD - 5 to 6 slower
+###################################
+
+start = time.time()
+
+limit = 10000000
+sum_ = 0
+
+for i in range(3, limit):
+    if sum_fac_dig_slow(i) == i:
+        print(i)
+        sum_ += i
+
+end = time.time()
+
+print('---\n', sum_)
+print(f'time: f{end-start}')

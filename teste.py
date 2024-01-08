@@ -1,9 +1,12 @@
-a = [2, 2, 7]
-b = [2, 5, 11]
-a_simp = a[:]
-for factor in a:
-    if factor in b:
-        a_simp.remove(factor)
-        b.remove(factor)
+import numpy as np
+def addition(n):
+    return n + n
 
-print(a_simp)
+numbers = (1, 2, 3, 4)
+result = map(addition, numbers)
+a = list(result)
+print(a)
+print(type(a))
+a = np.array(a)
+print(a)
+print(type(a))

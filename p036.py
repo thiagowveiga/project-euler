@@ -7,7 +7,7 @@
 import time
 from math import log, ceil
 
-limit = 1_000_000_000_000
+limit = 1_000_000_000
 
 def reverse(n, base=10):
     k = n

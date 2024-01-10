@@ -12,8 +12,8 @@ while a < 500:
     b = ((k**2)/2 - k*a)/(k - a)
     c = k - (a + b)
     soma = a + b + c
-    if b == int(b) and c == int(c) and soma == k:
-        print(a, int(b), int(c))
-        print(int(a*b*c))
-        a = stop + 1
+    if b == int(b) and c == int(c) and soma == k:   # lol why did i do it like this?
+        print(a, int(b), int(c))    # didnt need the int()
+        print(int(a*b*c))   # here too
+        a = stop + 1        # how to break for advanced pro masters!
     a += 1

@@ -29,21 +29,21 @@ def is_trunc(num):
 sum_truncprim = 0
 count = 0
 start = time.time()
-for i in range(11, 1_000_000, 10):
-    j = i + 2
-    k = i + 6
-    if is_trunc(i):
-        print(i)
-        sum_truncprim += i
-        count += 1
-    if is_trunc(j):
-        print(j)
-        sum_truncprim += j
-        count += 1
-    if is_trunc(k):
-        print(k)
-        sum_truncprim += k
-        count += 1
+for i in range(13, 1_000_000, 10):
+    j = i + 4
+    mid_digs = True
+    for dig in str(i)[1:-1]:
+        if dig not in ['1', '3', '7', '9']:
+            mid_digs = False
+    if mid_digs and str(i)[0] in ['2', '3', '5', '7']:
+        if is_trunc(i):
+            print(i)
+            sum_truncprim += i
+            count += 1
+        if is_trunc(j):
+            print(j)
+            sum_truncprim += j
+            count += 1
     if count == 11:
         break
 end = time.time()

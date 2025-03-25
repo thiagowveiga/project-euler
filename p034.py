@@ -5,7 +5,7 @@
 # as it is only added a 9 to each of those max's, the highest fsum of each set grows linearly by 9! = 362880
 # but the value of the number with the highest fsum (99...) grows exponentially
 # because of that, after the set that contains 9!, the fsum will always be smaller than its number
-# in conclusion it is safe to stablish am upper bound to the search of 999999 (it might be smaller, but this is already enough)
+# in conclusion it is safe to stablish an upper bound to the search of 999999 (it might be smaller, but this is already enough)
 
 # check <https://colab.research.google.com/drive/15JwcqxZ6p-wFfilQnzC83O6c3O66TusB?usp=sharing#scrollTo=jCLmMQYWERy8> for visualization of that
 
